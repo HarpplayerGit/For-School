@@ -3,18 +3,18 @@
 char	*ft_strrchr(const char	*s, int	c)
 {
 	char	*d;
+	char	*f;
 	int	n;
 
+	d = (char*)s;
+	f = d;
 	n = (ft_strlen(s) - 1);
-	while (s[n] && s[n] != c)
-		n--;
-	while (n != 0)
+	while (*f != c && n > 0)
 	{
-		s++;
+		f = d + n;
 		n--;
 	}
-	d = (char*)s;
-	if (*d == c)
-		return (d);
+	if (*f == c)
+		return (f);
 	return ((void *) 0);
 }

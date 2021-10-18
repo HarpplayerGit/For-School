@@ -7,7 +7,8 @@ char	*ft_strnstr(const char	*largestring,\
 	i = 0;
 	while (*smallstring != *largestring && *largestring)
 		largestring++;
-	while (i < n && smallstring[i] && largestring[i] && smallstring[i] == largestring[i])
+	while (i < n && smallstring[i] &&
+			largestring[i] && smallstring[i] == largestring[i])
 		i++;
 	if (i != n)
 		return ((void *) 0);

@@ -8,6 +8,9 @@ void	*ft_memcpy(void	*dest, void	*src, unsigned long int	n)
 	as = (unsigned char *) src;
 	ad = (unsigned char *) dest;
 	while (i < n)
-		as[i] = ad[i++];
+	{
+		as[i] = ad[i];
+		i++;
+	}
 	return (dest);
 }
