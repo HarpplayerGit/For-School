@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: asoledad <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/25 17:47:22 by asoledad          #+#    #+#             */
+/*   Updated: 2021/10/25 17:47:24 by asoledad         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 #include "libft.h"
 
@@ -10,7 +22,7 @@ int	num_len(int	n)
 		n = (n * (-1));
 	while (n >= 10)
 	{
-		n = n/10;
+		n = (n / 10);
 		i++;
 	}
 	return (i);
@@ -44,12 +56,14 @@ char	*ft_itoa(int	n)
 
 	if (n < 0)
 	{
-		if (!(s = (char *)malloc(num_len(n) + 2)))
+		s = (char *)malloc(num_len(n) + 2);
+		if (!(s))
 			return ((void *) 0);
 	}
 	else
 	{
-		if (!(s = (char *)malloc(num_len(n) + 1)))
+		s = (char *)malloc(num_len(n) + 1);
+		if (!(s))
 			return ((void *) 0);
 	}
 	return (filling_string(s, n));

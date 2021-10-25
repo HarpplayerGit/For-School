@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: asoledad <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/25 17:41:42 by asoledad          #+#    #+#             */
+/*   Updated: 2021/10/25 17:42:28 by asoledad         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 
 char	**clear_mass(char	**mass)
@@ -6,7 +18,7 @@ char	**clear_mass(char	**mass)
 
 	n = 0;
 	while (mass[n])
-		free(mass[n]);
+		free(mass[n++]);
 	free(mass);
 	return ((void *) 0);
 }
@@ -28,7 +40,7 @@ int	len_word(char const	*str, char c)
 
 int	number_of_words(char const	*str, char	c)
 {
-	int n;
+	int	n;
 
 	n = 0;
 	while (*str)
@@ -53,8 +65,8 @@ char	**filling_strings(char const	*str, char	c, char	**mass)
 	nw = number_of_words(str, c);
 	while (n < nw)
 	{
-		if (!(mass[n] = (char*)malloc(sizeof (char) *
-					       	(len_word(str, c) + 1))))
+		mass[n] = (char *)malloc(sizeof (char) * (len_word(str, c) + 1));
+		if (!(mass[n]))
 			return (clear_mass(mass));
 		while (*str == c && *str)
 			str++;
@@ -73,10 +85,11 @@ char	**filling_strings(char const	*str, char	c, char	**mass)
 char	**ft_split(char const	*str, char	c)
 {
 	char	**mass;
-	int	nw;
-	
+	int		nw;
+
 	nw = number_of_words(str, c);
-	if (!(mass = (char**)malloc(sizeof (char*) * nw)))
+	mass = (char **)malloc(sizeof (char *) * nw);
+	if (!(mass))
 		return ((void *) 0);
 	return (filling_strings(str, c, mass));
 }

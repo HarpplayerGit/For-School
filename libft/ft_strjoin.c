@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: asoledad <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/10/25 17:36:10 by asoledad          #+#    #+#             */
+/*   Updated: 2021/10/25 17:36:28 by asoledad         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
 
 long unsigned int	ft_strlen(const char	*s)
@@ -12,7 +24,7 @@ long unsigned int	ft_strlen(const char	*s)
 
 char	*ft_strjoin(char const	*s1, char const	*s2)
 {
-	char			*join;
+	char				*join;
 	long unsigned int	n;
 	long unsigned int	i;
 
