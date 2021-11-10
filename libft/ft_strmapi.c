@@ -6,11 +6,10 @@
 /*   By: asoledad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 17:34:10 by asoledad          #+#    #+#             */
-/*   Updated: 2021/10/25 18:13:44 by asoledad         ###   ########.fr       */
+/*   Updated: 2021/11/10 15:34:49 by asoledad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_strmapi(char const	*s, char	(*f)(unsigned int, char))

@@ -6,19 +6,18 @@
 /*   By: asoledad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 17:27:10 by asoledad          #+#    #+#             */
-/*   Updated: 2021/10/25 17:28:19 by asoledad         ###   ########.fr       */
+/*   Updated: 2021/11/10 15:32:01 by asoledad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 char	*ft_strtrim(char const	*s1, char const	*set)
 {
 	char	*trimm;
 	int		n;
 
-	n = ft_strlen(s1) - 1;
+	n = ft_strlen(s1);
 	while (*s1 && ft_strchr(set, *s1))
 		s1++;
 	while (s1[n] && ft_strchr(set, s1[n]))

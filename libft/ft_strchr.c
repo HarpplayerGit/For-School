@@ -6,7 +6,7 @@
 /*   By: asoledad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 17:37:43 by asoledad          #+#    #+#             */
-/*   Updated: 2021/10/25 17:37:44 by asoledad         ###   ########.fr       */
+/*   Updated: 2021/11/09 15:23:51 by asoledad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_strchr(const char	*s, int	c)
 	d = (char *)s;
 	while (*d && (*d != c))
 		d++;
-	if (!*d)
+	if (*d != c)
 		return ((void *) 0);
 	return (d);
 }

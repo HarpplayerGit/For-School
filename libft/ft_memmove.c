@@ -6,28 +6,35 @@
 /*   By: asoledad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 17:44:19 by asoledad          #+#    #+#             */
-/*   Updated: 2021/10/25 17:44:21 by asoledad         ###   ########.fr       */
+/*   Updated: 2021/11/10 18:19:16 by asoledad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	*ft_memmove(void	*dest, const void	*src, long unsigned int	n)
+#include "libft.h"
+
+void	*ft_memmove(void	*dest, const void	*src, size_t	n)
 {
 	unsigned char		*arsrc;
 	unsigned char		*ardst;
-	long unsigned int	i;
+	size_t				i;
 
 	arsrc = (unsigned char *) src;
 	ardst = (unsigned char *) dest;
+	if (!ardst && !arsrc)
+		return ((void *) 0);
 	i = 0;
-	if (arsrc > ardst)
-		while (n-- > i)
-			ardst[i] = arsrc[i];
+	if (src < dest)
+	{
+		while (n--)
+			ardst[n] = arsrc[n];
+	}
 	else
 	{
-		arsrc = (((unsigned char *) src) + (n - 1));
-		ardst = (((unsigned char *) dest) + (n - 1));
-		while (--n >= i)
-			ardst[n] = arsrc[n];
+		while (i < n)
+		{
+			ardst[i] = arsrc[i];
+			i++;
+		}
 	}
 	return (dest);
 }

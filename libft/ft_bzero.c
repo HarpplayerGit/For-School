@@ -6,13 +6,15 @@
 /*   By: asoledad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 17:50:18 by asoledad          #+#    #+#             */
-/*   Updated: 2021/10/25 17:50:19 by asoledad         ###   ########.fr       */
+/*   Updated: 2021/11/10 15:03:22 by asoledad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_bzero(void	*s, long unsigned int n)
+#include "libft.h"
+
+void	ft_bzero(void	*s, size_t n)
 {
-	long unsigned int		i;
+	size_t					i;
 	unsigned char			*a;
 
 	a = (unsigned char *) s;

@@ -6,19 +6,19 @@
 /*   By: asoledad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 17:41:42 by asoledad          #+#    #+#             */
-/*   Updated: 2021/10/25 17:42:28 by asoledad         ###   ########.fr       */
+/*   Updated: 2021/11/10 17:45:38 by asoledad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-char	**clear_mass(char	**mass)
+char	**clear_mass(char	**mass, int	n)
 {
-	int	n;
-
-	n = 0;
-	while (mass[n])
-		free(mass[n++]);
+	while (n)
+	{
+		free(mass[n]);
+		n--;
+	}
 	free(mass);
 	return ((void *) 0);
 }
@@ -47,11 +47,12 @@ int	number_of_words(char const	*str, char	c)
 	{
 		while (*str == c && *str)
 			str++;
-		n++;
+		if (*str)
+			n++;
 		while (*str != c && *str)
 			str++;
 	}
-	return (n + 1);
+	return (n);
 }
 
 char	**filling_strings(char const	*str, char	c, char	**mass)
@@ -67,7 +68,7 @@ char	**filling_strings(char const	*str, char	c, char	**mass)
 	{
 		mass[n] = (char *)malloc(sizeof (char) * (len_word(str, c) + 1));
 		if (!(mass[n]))
-			return (clear_mass(mass));
+			return (clear_mass(mass, n));
 		while (*str == c && *str)
 			str++;
 		while (*str != c && *str)

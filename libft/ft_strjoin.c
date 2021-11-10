@@ -6,15 +6,15 @@
 /*   By: asoledad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 17:36:10 by asoledad          #+#    #+#             */
-/*   Updated: 2021/10/25 17:36:28 by asoledad         ###   ########.fr       */
+/*   Updated: 2021/11/10 15:20:40 by asoledad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-long unsigned int	ft_strlen(const char	*s)
+static size_t	s_lenght(const char	*s)
 {
-	long unsigned int	n;
+	size_t	n;
 
 	n = 0;
 	while (s[n])
@@ -24,11 +24,11 @@ long unsigned int	ft_strlen(const char	*s)
 
 char	*ft_strjoin(char const	*s1, char const	*s2)
 {
-	char				*join;
-	long unsigned int	n;
-	long unsigned int	i;
+	char	*join;
+	size_t	n;
+	size_t	i;
 
-	n = ((ft_strlen(s1) - 1) + ft_strlen(s2));
+	n = ((s_lenght(s1) - 1) + s_lenght(s2));
 	join = (char *)malloc(n);
 	i = 0;
 	n = 0;

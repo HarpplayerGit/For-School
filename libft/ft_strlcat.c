@@ -6,25 +6,36 @@
 /*   By: asoledad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 17:35:06 by asoledad          #+#    #+#             */
-/*   Updated: 2021/10/25 17:36:03 by asoledad         ###   ########.fr       */
+/*   Updated: 2021/11/10 14:41:34 by asoledad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-long unsigned int	ft_strlcat(char	*dest,
-						const char	*src, long unsigned int	n)
+static size_t	size_of_str(const char *str)
 {
-	long unsigned int	c;
-	long unsigned int	i;
+	size_t	n;
 
-	i = (ft_strlen(dest) - 1);
-	c = 0;
-	while (c < n)
-		dest[i++] = src[c++];
-	i = ft_strlen(dest);
-	if (dest [i])
-		dest[i] = '\0';
-	i = (ft_strlen(dest) + ft_strlen(src));
-	return (i);
+	n = 0;
+	while (str[n])
+		n++;
+	return (n);
+}
+
+size_t	ft_strlcat(char	*dest,
+						const char	*src, size_t	dstsize)
+{
+	size_t	c;
+	size_t	i;
+	size_t	n;
+
+	c = size_of_str(dest);
+	i = 0;
+	n = size_of_str(src) + size_of_str(dest);
+	if (c >= dstsize)
+		return (size_of_str(src) + dstsize);
+	while (src[i] && (c + 1) < dstsize)
+		dest[c++] = src[i++];
+	dest[c] = '\0';
+	return (n);
 }

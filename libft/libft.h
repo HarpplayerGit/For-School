@@ -6,12 +6,15 @@
 /*   By: asoledad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 17:29:38 by asoledad          #+#    #+#             */
-/*   Updated: 2021/10/25 17:29:40 by asoledad         ###   ########.fr       */
+/*   Updated: 2021/11/10 16:03:55 by asoledad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+
+# include 			<stdlib.h>
+# include 			<unistd.h>
 
 int					ft_atoi(char	*str);
 void				ft_bzero(void	*s, long unsigned int n);
@@ -55,7 +58,6 @@ long unsigned int	ft_strlcat(char	*dest, const char	*src,
 						long unsigned int	n);
 long unsigned int	ft_strlcpy(char	*dest, const char	*src,
 						long unsigned int	n);
-char				*ft_substr(char const	*s, unsigned int	start,
-						long unsigned int	len);
+char				*ft_substr(char const	*s, size_t	start, size_t	len);
 
 #endif
