@@ -1,9 +1,9 @@
 = Host-specific information ====================================================
 $> hostname; uname -msr
-at-b1.msk.21-school.ru
+vo-c1.msk.21-school.ru
 Darwin 18.7.0 x86_64
 $> date
-Wed Nov 10 17:45:44 MSK 2021
+Sat Nov 13 19:16:43 MSK 2021
 $> gcc --version
 Apple clang version 11.0.0 (clang-1100.0.33.17)
 Target: x86_64-apple-darwin18.7.0
@@ -58,12 +58,15 @@ gcc -c -Wall -Wextra -Werror ft_putnbr_fd.c -o ft_putnbr_fd.o
 ar rcs  libft.a ft_atoi.o ft_bzero.o ft_calloc.o ft_isalnum.o ft_isalpha.o ft_isascii.o ft_isdigit.o ft_isprint.o ft_memchr.o ft_memcmp.o ft_memcpy.o ft_memmove.o ft_memset.o ft_strchr.o ft_strdup.o ft_strlcat.o ft_strlcpy.o ft_strlen.o ft_strncmp.o ft_strnstr.o ft_strrchr.o ft_tolower.o ft_toupper.o ft_substr.o ft_strjoin.o ft_strtrim.o ft_split.o ft_itoa.o ft_strmapi.o ft_striteri.o ft_putchar_fd.o ft_putstr_fd.o ft_putendl_fd.o ft_putnbr_fd.o
 
 $> ls -la libft.a
--rw-r--r--  1 asoledad  4221  33944 Nov 10 17:45 /Users/asoledad/projects/tester/tmp_tests_dir/libft.a
+-rw-r--r--  1 asoledad  4221  34856 Nov 13 19:16 /Users/asoledad/projects/tester/tmp_tests_dir/libft.a
 
 = Part1_functions ==============================================================
 
 = ft_atoi ======================================================================
 $> norminette ft_atoi.c | grep -E '(Error|Warning)'
+/Users/asoledad/projects/tester/tmp_tests_dir/ft_atoi.c: Error!
+Error: TAB_REPLACE_SPACE    (line:  17, col:   9):	Found tab when expecting space
+Norme check failed
 $> clang -Wextra -Wall -Werror /Users/asoledad/projects/tester/tests/Part1_functions/ft_atoi/main.c -L/Users/asoledad/projects/tester/tmp_tests_dir -lft -I/Users/asoledad/projects/tester/tmp_tests_dir
 
 = Test 1 ===================================================
@@ -954,6 +957,9 @@ Diff OK :D
 
 = ft_itoa ======================================================================
 $> norminette ft_itoa.c | grep -E '(Error|Warning)'
+/Users/asoledad/projects/tester/tmp_tests_dir/ft_itoa.c: Error!
+Error: EMPTY_LINE_FUNCTION  (line:  64, col:   1):	Empty line in function
+Norme check failed
 $> clang -Wextra -Wall -Werror /Users/asoledad/projects/tester/tests/Part2_functions/ft_itoa/main.c -L/Users/asoledad/projects/tester/tmp_tests_dir -lft -I/Users/asoledad/projects/tester/tmp_tests_dir
 
 = Test 1 ===================================================
@@ -1171,15 +1177,18 @@ Command './user_exe 05' got killed by a Segmentation fault
 
 = ft_strjoin ===================================================================
 $> norminette ft_strjoin.c | grep -E '(Error|Warning)'
+/Users/asoledad/projects/tester/tmp_tests_dir/ft_strjoin.c: Error!
+Error: TOO_MANY_LINES       (line:  69, col:   1):	Function has more than 25 lines
+Norme check failed
 $> clang -Wextra -Wall -Werror /Users/asoledad/projects/tester/tests/Part2_functions/ft_strjoin/main.c -L/Users/asoledad/projects/tester/tmp_tests_dir -lft -I/Users/asoledad/projects/tester/tmp_tests_dir
 
 = Test 1 ===================================================
 $> ./user_exe 01
 $> diff -U 3 user_output_test01 test01.output
---- /Users/asoledad/projects/tester/tests/Part2_functions/ft_strjoin/user_output_test01	2021-11-10 17:45:55.000000000 +0300$
+--- /Users/asoledad/projects/tester/tests/Part2_functions/ft_strjoin/user_output_test01	2021-11-13 19:16:54.000000000 +0300$
 +++ /Users/asoledad/projects/tester/tests/Part2_functions/ft_strjoin/test01.output	2021-10-25 18:03:34.000000000 +0300$
 @@ -1 +1 @@$
--lorem ipsumdolor sit amet^X^KM-^Sÿ^?$
+-lorem ipsumdolor sit amethFM-^Qÿ^?$
 \ No newline at end of file$
 +lorem ipsumdolor sit amet$
 \ No newline at end of file$
@@ -1188,7 +1197,7 @@ Diff KO :(
 = Test 2 ===================================================
 $> ./user_exe 02
 $> diff -U 3 user_output_test02 test02.output
---- /Users/asoledad/projects/tester/tests/Part2_functions/ft_strjoin/user_output_test02	2021-11-10 17:45:55.000000000 +0300$
+--- /Users/asoledad/projects/tester/tests/Part2_functions/ft_strjoin/user_output_test02	2021-11-13 19:16:54.000000000 +0300$
 +++ /Users/asoledad/projects/tester/tests/Part2_functions/ft_strjoin/test02.output	2021-10-25 18:03:34.000000000 +0300$
 @@ -1 +1 @@$
 -NULL$
@@ -1200,7 +1209,7 @@ Diff KO :(
 = Test 3 ===================================================
 $> ./user_exe 03
 $> diff -U 3 user_output_test03 test03.output
---- /Users/asoledad/projects/tester/tests/Part2_functions/ft_strjoin/user_output_test03	2021-11-10 17:45:55.000000000 +0300$
+--- /Users/asoledad/projects/tester/tests/Part2_functions/ft_strjoin/user_output_test03	2021-11-13 19:16:54.000000000 +0300$
 +++ /Users/asoledad/projects/tester/tests/Part2_functions/ft_strjoin/test03.output	2021-10-25 18:03:34.000000000 +0300$
 @@ -1 +1 @@$
 -NULL$
@@ -1230,13 +1239,12 @@ $> clang -Wextra -Wall -Werror /Users/asoledad/projects/tester/tests/Part2_funct
 = Test 1 ===================================================
 $> ./user_exe 01
 $> diff -U 3 user_output_test01 test01.output
---- /Users/asoledad/projects/tester/tests/Part2_functions/ft_strtrim/user_output_test01	2021-11-10 17:45:55.000000000 +0300$
+--- /Users/asoledad/projects/tester/tests/Part2_functions/ft_strtrim/user_output_test01	2021-11-13 19:16:55.000000000 +0300$
 +++ /Users/asoledad/projects/tester/tests/Part2_functions/ft_strtrim/test01.output	2021-10-25 18:03:34.000000000 +0300$
-@@ -1,4 +1,3 @@$
+@@ -1,3 +1,3 @@$
  lorem $
   ipsum 	 dolor $
-- sit 	 ameá$
--M-^Sÿ^?$
+- sit 	 ame$
 \ No newline at end of file$
 + sit 	 amet$
 \ No newline at end of file$
@@ -1245,7 +1253,7 @@ Diff KO :(
 = Test 2 ===================================================
 $> ./user_exe 02
 $> diff -U 3 user_output_test02 test02.output
---- /Users/asoledad/projects/tester/tests/Part2_functions/ft_strtrim/user_output_test02	2021-11-10 17:45:55.000000000 +0300$
+--- /Users/asoledad/projects/tester/tests/Part2_functions/ft_strtrim/user_output_test02	2021-11-13 19:16:55.000000000 +0300$
 +++ /Users/asoledad/projects/tester/tests/Part2_functions/ft_strtrim/test02.output	2021-10-25 18:03:34.000000000 +0300$
 @@ -1,2 +1 @@$
 -lorem ipsum dolor sit amet $
@@ -1263,7 +1271,7 @@ Diff OK :D
 = Test 4 ===================================================
 $> ./user_exe 04
 $> diff -U 3 user_output_test04 test04.output
---- /Users/asoledad/projects/tester/tests/Part2_functions/ft_strtrim/user_output_test04	2021-11-10 17:45:55.000000000 +0300$
+--- /Users/asoledad/projects/tester/tests/Part2_functions/ft_strtrim/user_output_test04	2021-11-13 19:16:55.000000000 +0300$
 +++ /Users/asoledad/projects/tester/tests/Part2_functions/ft_strtrim/test04.output	2021-10-25 18:03:34.000000000 +0300$
 @@ -1,4 +1,3 @@$
  lorem $

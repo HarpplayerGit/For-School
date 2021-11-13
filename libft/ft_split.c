@@ -6,7 +6,7 @@
 /*   By: asoledad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 17:41:42 by asoledad          #+#    #+#             */
-/*   Updated: 2021/11/10 17:45:38 by asoledad         ###   ########.fr       */
+/*   Updated: 2021/11/13 20:06:05 by asoledad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,14 @@ int	number_of_words(char const	*str, char	c)
 	int	n;
 
 	n = 0;
+	while (*str == c && (str + 1))
+		str++;
 	while (*str)
 	{
-		while (*str == c && *str)
-			str++;
-		if (*str)
-			n++;
+		n++;
 		while (*str != c && *str)
+			str++;
+		while (*str == c && (str + 1))
 			str++;
 	}
 	return (n);
@@ -77,6 +78,7 @@ char	**filling_strings(char const	*str, char	c, char	**mass)
 			i++;
 			str++;
 		}
+		mass[n][i] = '\0';
 		i = 0;
 		n++;
 	}
@@ -88,6 +90,8 @@ char	**ft_split(char const	*str, char	c)
 	char	**mass;
 	int		nw;
 
+	if (!str || !c)
+		return ((void *) 0);
 	nw = number_of_words(str, c);
 	mass = (char **)malloc(sizeof (char *) * nw);
 	if (!(mass))

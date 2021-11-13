@@ -6,7 +6,7 @@
 /*   By: asoledad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 17:32:14 by asoledad          #+#    #+#             */
-/*   Updated: 2021/11/10 19:07:40 by asoledad         ###   ########.fr       */
+/*   Updated: 2021/11/13 15:49:57 by asoledad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ int	ft_strncmp(const char	*s1, const char	*s2, size_t	n)
 		i++;
 	if (s1[i] < 0 && s2[i] == 0)
 		return (s1[i] * -1);
-	i = s1[i] - s2[i];
+	i = (unsigned char)s1[i] - (unsigned char)s2[i];
 	return (i);
 }

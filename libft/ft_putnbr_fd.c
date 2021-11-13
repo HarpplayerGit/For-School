@@ -6,7 +6,7 @@
 /*   By: asoledad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 17:42:53 by asoledad          #+#    #+#             */
-/*   Updated: 2021/11/10 17:38:59 by asoledad         ###   ########.fr       */
+/*   Updated: 2021/11/13 18:23:58 by asoledad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,6 @@ void	ft_putnbr_fd(int	n, int	fd)
 		i = (unsigned int)(n * -1);
 	}
 	else
-		i = n;
+		i = (unsigned int)n;
 	writting_num(i, fd);
 }

@@ -6,15 +6,15 @@
 /*   By: asoledad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 17:50:55 by asoledad          #+#    #+#             */
-/*   Updated: 2021/10/25 17:51:13 by asoledad         ###   ########.fr       */
+/*   Updated: 2021/11/13 16:10:19 by asoledad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_atoi(char	*str)
 {
-	unsigned int	n;
-	int				m;
-	int				i;
+	unsigned int			n;
+	int						m;
+	long	int				i;
 
 	n = 0;
 	m = 1;
@@ -28,6 +28,12 @@ int	ft_atoi(char	*str)
 		n++;
 	}
 	while (str[n] >= '0' && str[n] <= '9')
+	{
 		i = ((i * 10) + (str[n++] - '0'));
+		if (i > 2147483648 && m < 0)
+			return (0);
+		else if (i > 2147483648)
+			return (-1);
+	}
 	return (i * m);
 }
