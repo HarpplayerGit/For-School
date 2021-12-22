@@ -15,7 +15,7 @@ static char	*s_copy(char *s1, const char	*s2)
 	size_t	n;
 
 	n = 0;
-	while (s2[n] && s2[n - 1] != '\n')
+	while (s2[n])
 	{
 		s1[n] = s2[n];
 		n++;
@@ -33,7 +33,7 @@ static char	*s_cat(char	*s1, const char	*s2)
 	i = 0;
 	while (s1[n])
 		++n;
-	while (s2[i] && s2[i] != '\n')
+	while (s2[i])
 	{
 		s1[n] = s2[i - 1];
 		n++;
