@@ -6,7 +6,7 @@
 /*   By: asoledad <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 17:45:27 by asoledad          #+#    #+#             */
-/*   Updated: 2021/11/10 18:20:49 by asoledad         ###   ########.fr       */
+/*   Updated: 2022/09/01 14:01:22 by plasmodiy        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 void	*ft_memchr(const void	*s, int	c, size_t	n)
 {
 	char	*ar;
-	size_t	i;
 
-	i = 0;
 	ar = (char *) s;
 	if (!ar && !n)
 		return ((void *) 0);

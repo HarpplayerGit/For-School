@@ -23,9 +23,11 @@ $(NAME)	: $(OBJS)
 
 fclean	: clean
 	rm -rf libft.a
+	rm -rf libft.h.gch
 
 clean	: 
 	rm -f $(OBJS)
+
 
 re	: clean	all
 
