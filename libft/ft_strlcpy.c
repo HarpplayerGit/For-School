@@ -24,11 +24,9 @@ static size_t	s_lenght(const char	*s)
 
 size_t	ft_strlcpy(char	*dest, const char	*src, size_t	n)
 {
-	size_t	c;
 	size_t	i;
 
 	i = 0;
-	c = s_lenght(dest);
 	if (n)
 	{
 		while (i < (n - 1) && src[i])

@@ -42,9 +42,7 @@ static size_t	len_of_string(const char	*s)
 char	*ft_strdup(const char	*s1)
 {
 	char	*s2;
-	size_t	n;
 
-	n = 0;
 	s2 = malloc(len_of_string(s1) + 1);
 	if (!s2)
 		return ((void *) 0);
